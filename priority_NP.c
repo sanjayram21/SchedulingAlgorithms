@@ -51,8 +51,8 @@ int main()
     }
 
     qsort(arr, n, sizeof(item), compare);
-    for (int i = 0; i < n; i++)
-        printf("P%d\t%d\t%d\t%d\n", arr[i].processNumber, arr[i].arrivalTime, arr[i].burstTime, arr[i].priority);
+    // for (int i = 0; i < n; i++)
+    //     printf("P%d\t%d\t%d\t%d\n", arr[i].processNumber, arr[i].arrivalTime, arr[i].burstTime, arr[i].priority);
 
     while (seen < n)
     {
@@ -72,7 +72,6 @@ int main()
                 waitingTime += arr[i].waitingTime;
                 seen++;
                 flag = 1;
-                qsort(arr, n, sizeof(item), compare);
                 break;
             }
         }
