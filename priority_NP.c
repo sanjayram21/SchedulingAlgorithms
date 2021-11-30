@@ -19,7 +19,11 @@ int compare(const void *a, const void *b)
     item *itemb = (item *)b;
     //higher the priority value, higher the priority
     if (itema->priority == itemb->priority)
+    {
+        if (itema->arrivalTime == itemb->arrivalTime)
+            return itema->burstTime - itemb->burstTime;
         return itema->arrivalTime - itemb->arrivalTime;
+    }
     return itemb->priority - itema->priority;
 }
 
