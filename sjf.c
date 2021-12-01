@@ -20,7 +20,7 @@ int compare(const void *a, const void *b)
     return itema->burstTime - itemb->burstTime;
 }
 
-int compareByWaitingTime(const void *a, const void *b)
+int compareByCompletionTime(const void *a, const void *b)
 {
     item *itema = (item *)a;
     item *itemb = (item *)b;
@@ -70,7 +70,7 @@ int main()
         if (flag == 0)
             curTime++;
     }
-    qsort(arr, n, sizeof(item), compareByWaitingTime);
+    qsort(arr, n, sizeof(item), compareByCompletionTime);
     printf("Process No \t Arrival time \t Burst time \t Completion time \t TAT \t WT\n");
     for (int i = 0; i < n; i++)
     {
