@@ -27,7 +27,7 @@ int compare(const void *a, const void *b)
     return itemb->priority - itema->priority;
 }
 
-int compareByWaitingTime(const void *a, const void *b)
+int compareByCompletionTime(const void *a, const void *b)
 {
     item *itema = (item *)a;
     item *itemb = (item *)b;
@@ -82,7 +82,7 @@ int main()
         if (flag == 0) //no process found
             curTime++;
     }
-    qsort(arr, n, sizeof(item), compareByWaitingTime);
+    qsort(arr, n, sizeof(item), compareByCompletionTime);
     printf("Process number \t Arrival time \t Burst time \t Priority \t Completion time \t TAT \t WT\n");
     for (int i = 0; i < n; i++)
     {
